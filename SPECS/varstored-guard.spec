@@ -1,15 +1,15 @@
 Name: varstored-guard
 Summary: Deprivileged XAPI socket Daemon for EFI variable storage
-Version: 0.3.0
-Release: 1
+Version: 0.5.0
+Release: 2
 
 License: LGPL
 URL:            https://github.com/xapi-project/varstored-guard
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.3.0&format=tar.gz&prefix=varstored-guard-0.3.0#/varstored-guard-0.3.0.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.5.0&format=tar.gz&prefix=varstored-guard-0.5.0#/varstored-guard-0.5.0.tar.gz
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.3.0&format=tar.gz&prefix=varstored-guard-0.3.0#/varstored-guard-0.3.0.tar.gz) = f87168cfc09401bf5f09259c39ce3be352832a5c
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.5.0&format=tar.gz&prefix=varstored-guard-0.5.0#/varstored-guard-0.5.0.tar.gz) = da90db813171999856886b3418a1be7b020e7f58
 
 BuildRequires:  ocaml-xcp-idl-devel ocaml-xen-api-client-devel openssl-devel xs-opam-repo
 
@@ -36,6 +36,7 @@ make check
 %license LICENSE
 %{_sbindir}/*
 %{_unitdir}/%{name}.service
+%exclude /usr/lib/%{name}/dune-package
 %exclude /usr/lib/%{name}/META
 %exclude /usr/lib/%{name}/opam
 %exclude /usr/doc/%{name}/LICENSE
@@ -50,6 +51,16 @@ make check
 %systemd_postun %{name}.service
 
 %changelog
+* Fri Aug 23 2019 Edwin Török <edvin.torok@citrix.com> - 0.5.0-2
+- bump packages after xs-opam update
+
+* Thu Aug 15 2019 Christian Lindig <christian.lindig@citrix.com> - 0.5.0-1
+- maintenance: remove bisect_ppx preprocessing
+
+* Fri Aug 02 2019 Christian Lindig <christian.lindig@citrix.com> - 0.4.0-1
+- CA-322784 Fix varstored-guard logging is verbose
+- maintenance: setup travis
+
 * Tue Jan 22 2019 Christian Lindig <christian.lindig@citrix.com> - 0.3.0-1
 - CA-308072: fix varstored-guard with toolstack restart
 - CA-308072: wait for unix socket to be connectable
