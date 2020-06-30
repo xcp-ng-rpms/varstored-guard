@@ -1,15 +1,15 @@
 Name: varstored-guard
 Summary: Deprivileged XAPI socket Daemon for EFI variable storage
-Version: 0.5.0
-Release: 2
+Version: 0.6.0
+Release: 1
 
 License: LGPL
 URL:            https://github.com/xapi-project/varstored-guard
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.5.0&format=tar.gz&prefix=varstored-guard-0.5.0#/varstored-guard-0.5.0.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.6.0&format=tar.gz&prefix=varstored-guard-0.6.0#/varstored-guard-0.6.0.tar.gz
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.5.0&format=tar.gz&prefix=varstored-guard-0.5.0#/varstored-guard-0.5.0.tar.gz) = da90db813171999856886b3418a1be7b020e7f58
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.6.0&format=tar.gz&prefix=varstored-guard-0.6.0#/varstored-guard-0.6.0.tar.gz) = eecad8b4917f6fb026cc777c1cf24ed37d583c6e
 
 BuildRequires:  ocaml-xcp-idl-devel ocaml-xen-api-client-devel openssl-devel xs-opam-repo
 
@@ -51,6 +51,11 @@ make check
 %systemd_postun %{name}.service
 
 %changelog
+* Tue Mar 31 2020 Christian Lindig <christian.lindig@citrix.com> - 0.6.0-1
+- Fix compatibility with Dune 2.x
+- Add build/runtest into opam file
+- Update Travis
+
 * Fri Aug 23 2019 Edwin Török <edvin.torok@citrix.com> - 0.5.0-2
 - bump packages after xs-opam update
 
