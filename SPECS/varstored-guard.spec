@@ -1,7 +1,7 @@
 Name: varstored-guard
 Summary: Deprivileged XAPI socket Daemon for EFI variable storage
 Version: 0.6.0
-Release: 1
+Release: 1%{?dist}
 
 License: LGPL
 URL:            https://github.com/xapi-project/varstored-guard
