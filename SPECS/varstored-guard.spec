@@ -1,15 +1,15 @@
 Name: varstored-guard
 Summary: Deprivileged XAPI socket Daemon for EFI variable storage
-Version: 0.6.1
-Release: 3
+Version: 0.6.2
+Release: 1
 
 License: LGPL
 URL:            https://github.com/xapi-project/varstored-guard
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.6.1&format=tar.gz&prefix=varstored-guard-0.6.1#/varstored-guard-0.6.1.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.6.2&format=tar.gz&prefix=varstored-guard-0.6.2#/varstored-guard-0.6.2.tar.gz
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.6.1&format=tar.gz&prefix=varstored-guard-0.6.1#/varstored-guard-0.6.1.tar.gz) = 48457e08e2ae566935fedb25f0c9d89d0849b635
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.6.2&format=tar.gz&prefix=varstored-guard-0.6.2#/varstored-guard-0.6.2.tar.gz) = 8399390c4a2476916a66aaa9bbeee1311dffbd6d
 
 BuildRequires:  ocaml-xcp-idl-devel ocaml-xen-api-client-devel openssl-devel xs-opam-repo
 
@@ -53,6 +53,9 @@ make check
 %systemd_postun %{name}.service
 
 %changelog
+* Fri May 13 2022 Christian Lindig <christian.lindig@citrix.com> - 0.6.2-1
+- CA-364138 XSI-1217: fix FD leak, Unix.EMFILE
+
 * Mon Sep 27 2021 Pau Ruiz Safont <pau.safont@citrix.com> - 0.6.1-3
 - Bump package for libev dependency
 
