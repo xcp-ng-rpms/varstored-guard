@@ -1,16 +1,13 @@
+%global package_speccommit 77ee96440d23fec566b1a655b4da95475de4eb2f
+%global package_srccommit v0.6.2
 Name: varstored-guard
 Summary: Deprivileged XAPI socket Daemon for EFI variable storage
 Version: 0.6.2
-Release: 1
+Release: 2%{?xsrel}%{?dist}
 
-License: LGPL
+License: LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 URL:            https://github.com/xapi-project/varstored-guard
-
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.6.2&format=tar.gz&prefix=varstored-guard-0.6.2#/varstored-guard-0.6.2.tar.gz
-
-
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/varstored-guard/archive?at=v0.6.2&format=tar.gz&prefix=varstored-guard-0.6.2#/varstored-guard-0.6.2.tar.gz) = 8399390c4a2476916a66aaa9bbeee1311dffbd6d
-
+Source0: varstored-guard-0.6.2.tar.gz
 BuildRequires:  ocaml-xcp-idl-devel ocaml-xen-api-client-devel openssl-devel xs-opam-repo
 
 %{?systemd_requires}
@@ -53,6 +50,9 @@ make check
 %systemd_postun %{name}.service
 
 %changelog
+* Tue Feb 28 2023 Pau Ruiz Safont <pau.ruizsafont@cloud.com> - 0.6.2-2
+- Change license to match the one in the source repo
+
 * Fri May 13 2022 Christian Lindig <christian.lindig@citrix.com> - 0.6.2-1
 - CA-364138 XSI-1217: fix FD leak, Unix.EMFILE
 
