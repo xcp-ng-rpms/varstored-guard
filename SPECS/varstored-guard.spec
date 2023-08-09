@@ -1,9 +1,9 @@
-%global package_speccommit 77ee96440d23fec566b1a655b4da95475de4eb2f
+%global package_speccommit 8abcf985b2dc8a32b376085d5df16254282e945e
 %global package_srccommit v0.6.2
 Name: varstored-guard
 Summary: Deprivileged XAPI socket Daemon for EFI variable storage
 Version: 0.6.2
-Release: 2%{?xsrel}%{?dist}
+Release: 7%{?xsrel}%{?dist}
 
 License: LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 URL:            https://github.com/xapi-project/varstored-guard
@@ -50,6 +50,21 @@ make check
 %systemd_postun %{name}.service
 
 %changelog
+* Thu Jul 20 2023 Rob Hoes <rob.hoes@citrix.com> - 0.6.2-7
+- Bump release and rebuild
+
+* Mon Jun 19 2023 Christian Lindig <christian.lindig@citrix.com> - 0.6.2-6
+- Bump release and rebuild
+
+* Thu Jun 08 2023 Christian Lindig <christian.lindig@citrix.com> - 0.6.2-5
+- Bump release and rebuild
+
+* Fri May 12 2023 Christian Lindig <christian.lindig@citrix.com> - 0.6.2-4
+- Bump release and rebuild
+
+* Fri May 12 2023 Christian Lindig <christian.lindig@citrix.com> - 0.6.2-3
+- Bump release and rebuild
+
 * Tue Feb 28 2023 Pau Ruiz Safont <pau.ruizsafont@cloud.com> - 0.6.2-2
 - Change license to match the one in the source repo
 
