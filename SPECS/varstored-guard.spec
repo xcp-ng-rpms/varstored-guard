@@ -1,9 +1,9 @@
-%global package_speccommit a1b8ac9442577bfca1d5e8ed536f4611f08ce83b
+%global package_speccommit 4c2840ea7478788f705abf5baa48a7a9ee28c194
 %global package_srccommit v0.6.2
 Name: varstored-guard
 Summary: Deprivileged XAPI socket Daemon for EFI variable storage
 Version: 0.6.2
-Release: 17%{?xsrel}%{?dist}
+Release: 20%{?xsrel}%{?dist}
 
 License: LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 URL:            https://github.com/xapi-project/varstored-guard
@@ -50,6 +50,15 @@ make check
 %systemd_postun %{name}.service
 
 %changelog
+* Fri Dec 13 2024 Christian Lindig <christian.lindig@cloud.com> - 0.6.2-20
+- Bump release and rebuild
+
+* Fri Dec 13 2024 Christian Lindig <christian.lindig@cloud.com> - 0.6.2-19
+- Bump release and rebuild
+
+* Mon Dec 09 2024 Christian Lindig <christian.lindig@cloud.com> - 0.6.2-18
+- Bump release and rebuild
+
 * Thu Aug 29 2024 Christian Lindig <christian.lindig@cloud.com> - 0.6.2-17
 - Bump release and rebuild
 
